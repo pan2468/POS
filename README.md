@@ -13,3 +13,6 @@
 # IDE
 + Intelij Community
 + Visual Studio Code 
+
+## ERD
+![image](https://user-images.githubusercontent.com/58936137/170468609-801f2fb3-845a-4712-b674-f54727c9aa5b.png)
