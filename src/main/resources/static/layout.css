@@ -1,7 +1,9 @@
-.table-blue{
-    background-color:deepskyblue;
+.table-board{
+    background-color: #F27935;
 }
-
+.table-member{
+    background-color: #11B4B2;
+}
 .table{
     align-content: center;
 }
@@ -68,4 +70,7 @@ h5{
 #userid, #email, #name, #phone{
     margin-left: 473px;
     width: 350px;
+}
+#search{
+    padding-bottom: 15px;
 }

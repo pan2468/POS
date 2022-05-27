@@ -20,5 +20,12 @@ public class MemberController {
         return "member/sign_up";
     }
 
+    @GetMapping("/admin")
+    public String admin(){
+
+        return "member/admin";
+    }
+
+
 
 }
