@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>Title</title>
@@ -20,16 +20,17 @@
 			<div class="mb-3">
 				<input type="password" class="form-control" id="password" name="password" placeholder="비밀번호">
 			</div>
-			<div class="mb-3">
+<!--			<div class="mb-3">
 				<input type="password" class="form-control" id="password" name="password" placeholder="비밀번호 확인">
-			</div>
+			</div>-->
 			<div class="mb-3">
 				<input type="text" class="form-control" id="name" name="name" placeholder="이름">
 			</div>
 			<div class="mb-3">
 				<input type="text" class="form-control" id="phone" name="phone" placeholder="휴대번호">
 			</div>
-			<button type="submit" class="btn btn-danger" id="sign_up">가입하기</button>
+			<button type="submit" class="btn btn-danger" id="sign_up">가입하기</button></br>
+			<a type="button" class="btn btn-primary" th:href="@{/member/login}" id="cencal">취소</a>
 		</form>
 	</div>
 </body>
