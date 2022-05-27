@@ -8,6 +8,29 @@
 	<link href="layout.css" th:href="@{/layout.css}" rel="stylesheet">
 </head>
 <body>
-	<h1>회원가입</h1>
+	<h5>회원 정보를 입력해주세요.</h5>
+	<div class="container">
+		<form>
+			<div class="mb-3">
+				<input type="text" class="form-control" id="userid" name="userid" placeholder="아이디">
+			</div>
+			<div class="mb-3">
+				<input type="email" class="form-control" id="email" name="email" placeholder="이메일">
+			</div>
+			<div class="mb-3">
+				<input type="password" class="form-control" id="password" name="password" placeholder="비밀번호">
+			</div>
+			<div class="mb-3">
+				<input type="password" class="form-control" id="password" name="password" placeholder="비밀번호 확인">
+			</div>
+			<div class="mb-3">
+				<input type="text" class="form-control" id="name" name="name" placeholder="이름">
+			</div>
+			<div class="mb-3">
+				<input type="text" class="form-control" id="phone" name="phone" placeholder="휴대번호">
+			</div>
+			<button type="submit" class="btn btn-danger" id="sign_up">가입하기</button>
+		</form>
+	</div>
 </body>
 </html>
