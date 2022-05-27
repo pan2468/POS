@@ -1,0 +1,28 @@
+.table-blue{
+    background-color:deepskyblue;
+}
+
+.table{
+    align-content: center;
+}
+
+.container{
+    border-top: 50px;
+}
+
+body {
+    padding-top: 5rem;
+}
+.button-style{
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+.d-flex{
+    margin: auto;
+    margin-left: 445px;
+    margin-right: 350px;
+}
+.form-control{
+    margin-right:5px;
+    width: 100px;
+}
