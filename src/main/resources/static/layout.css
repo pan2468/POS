@@ -13,9 +13,9 @@
 body {
     padding-top: 5rem;
 }
-.button-style{
+
+.text-end{
     margin-bottom: 5px;
-    margin-left: 5px;
 }
 .d-flex{
     margin: auto;
@@ -36,9 +36,27 @@ h4{
     margin-top: 5px;
     padding-bottom: 15px;
 }
+h5{
+    text-align: center;
+    margin-top: 5px;
+    padding-bottom: 5px;
+}
 .btn{
     font-weight: bold;
 }
 .form-label{
     font-weight: bold;
+}
+#id, #password{
+    margin: auto;
+    width: 350px;
+}
+#login{
+    margin-left: 473px;
+    width: 350px;
+}
+#sign{
+    margin-top: 5px;
+    margin-left: 473px;
+    width: 350px;
 }

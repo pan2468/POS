@@ -11,9 +11,9 @@
   <div class="container">
     <h3>공지사항</h3>
     <div class="text-end">
-      <button type="button" class="btn btn-primary button-style" style="float:right;">로그인</button>
-      <a type="button" class="btn btn-danger" th:href="@{/board/form}">글쓰기</a>
-  </div>
+        <a type="button" class="btn btn-primary" th:href="@{/member/login}">로그인</a>
+        <a type="button" class="btn btn-danger" th:href="@{/board/write}">글쓰기</a>
+    </div>
     <table class="table table-hover">
         <tr class="table-blue">
             <th scope="col">#</th>
@@ -46,7 +46,7 @@
               <option>Relish</option>
           </select>
           <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="width: 300px;" >
-          <button class="btn btn-outline-success" type="submit" style="margin-left: 5px;">Search</button>
+          <button class="btn btn-outline-success" type="submit" style="margin-left: 5px;">검색</button>
       </form>
     </br>
     <nav aria-label="Page navigation example">

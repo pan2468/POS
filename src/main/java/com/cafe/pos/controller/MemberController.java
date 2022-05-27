@@ -4,21 +4,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 @Controller
-@RequestMapping("/board")
-public class BoardController {
+@RequestMapping("/member")
+public class MemberController {
 
-    @GetMapping("/list")
-    public String list(){
+    @GetMapping("/login")
+    public String login(){
 
-        return "board/list";
+        return "member/memberLoginForm";
     }
 
-    @GetMapping("/write")
-    public String write(){
+    @GetMapping("/sign")
+    public String sign(){
 
-        return "board/write";
+        return "member/sign_up";
     }
+
 
 }
