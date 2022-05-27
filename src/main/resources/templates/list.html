@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>공지사항</title>
@@ -9,9 +9,11 @@
 </head>
 <body>
   <div class="container">
-    <button type="button" class="btn btn-primary button-style" style="float:right;">로그인</button>
-    <button type="button" class="btn btn-danger button-style" style="float:right;">글쓰기</button>
-    
+    <h3>공지사항</h3>
+    <div class="text-end">
+      <button type="button" class="btn btn-primary button-style" style="float:right;">로그인</button>
+      <a type="button" class="btn btn-danger" th:href="@{/board/form}">글쓰기</a>
+  </div>
     <table class="table table-hover">
         <tr class="table-blue">
             <th scope="col">#</th>
@@ -38,7 +40,7 @@
           </tr>
       </table> 
       <form class="d-flex" role="search">
-          <select class="form-control" style="">
+          <select class="form-select">
               <option>Mustard</option>
               <option>Ketchup</option>
               <option>Relish</option>
