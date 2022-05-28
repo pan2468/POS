@@ -1,12 +1,15 @@
 package com.cafe.pos.entity;
 
 import com.cafe.pos.constant.Role;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+
 
 @Entity
 @Table(name = "member")
@@ -30,7 +33,7 @@ public class Member {
 
     private String phone;
 
-    private LocalDateTime joinDate;
+    private LocalDate joinDate;
 
     private String address;
 

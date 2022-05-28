@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -33,6 +35,7 @@ public class MemberController {
 
     @PostMapping("/admin")
     public String sign_up(Member member){ // 회원 가입 후
+        member.setJoinDate(LocalDate.now());
         memberService.save(member);
         return "redirect:/member/admin";
     }
