@@ -10,7 +10,7 @@
 <body>
 	<h5>회원 정보를 입력해주세요.</h5>
 	<div class="container">
-		<form>
+		<form th:action="@{/member/admin}" role="form" method="post" th:object="${member}">
 			<div class="mb-3">
 				<input type="text" class="form-control" id="userid" name="userid" placeholder="아이디">
 			</div>
@@ -20,14 +20,18 @@
 			<div class="mb-3">
 				<input type="password" class="form-control" id="password" name="password" placeholder="비밀번호">
 			</div>
-<!--			<div class="mb-3">
-				<input type="password" class="form-control" id="password" name="password" placeholder="비밀번호 확인">
-			</div>-->
+
 			<div class="mb-3">
 				<input type="text" class="form-control" id="name" name="name" placeholder="이름">
 			</div>
 			<div class="mb-3">
 				<input type="text" class="form-control" id="phone" name="phone" placeholder="휴대번호">
+			</div>
+			<div class="mb-3">
+				<input type="text" class="form-control" id="address" name="address" placeholder="주소">
+			</div>
+			<div class="mb-3">
+				<input type="text" hidden="hidden" class="form-control" id="joinDate" name="joinDate" placeholder="가입날짜">
 			</div>
 			<button type="submit" class="btn btn-danger" id="sign_up">가입하기</button></br>
 			<a type="button" class="btn btn-primary" th:href="@{/member/login}" id="cencal">취소</a>
