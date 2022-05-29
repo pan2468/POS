@@ -6,6 +6,7 @@ import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -36,6 +37,7 @@ public class Board {
     private LocalDate regTime;
 
     private int hit;
+
 
 //    public void updateItem(BoardFormDto boardFormDto){
 //        this.id = boardFormDto.getId();

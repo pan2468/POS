@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,22 +23,24 @@ class BoardServiceTest {
     @Autowired
     BoardService boardService;
 
-    @Autowired
-    PasswordEncoder passwordEncoder;
+//    @Autowired
+//    PasswordEncoder passwordEncoder;
 
     @Autowired
     BoardRepository boardRepository;
 
-    @Test
-    @DisplayName("등록 테스트")
-     public Board save() throws Exception{
-        Board board = new Board();
+//    @Test
+//    @DisplayName("등록 테스트")
+//     public Board save() throws Exception{
+//        Board board = new Board();
+//
+//        board.setUsername("이름");
+//        board.setTitle("제목");
+//        board.setContent("내용");
+//        board.setRegTime(LocalDateTime.now());
+//
+//        return boardRepository.save(board);
+//    }
 
-        board.setUsername("이름");
-        board.setTitle("제목");
-        board.setContent("내용");
-        board.setRegTime(LocalDateTime.now());
 
-        return boardRepository.save(board);
-    }
 }

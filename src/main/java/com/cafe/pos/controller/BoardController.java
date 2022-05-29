@@ -42,13 +42,14 @@ public class BoardController {
     }
 
     @GetMapping("/write")
-    public String write(Model model, @RequestParam(required = false) Long id){
+    public String write(Model model, @RequestParam(required = false)  Long id){
 
         if(id == null){
             model.addAttribute("board",new Board());
         }else if(id != null){
-
+            log.info(id);
             Board board = boardRepository.findById(id).orElse(null);
+            boardService.updateView(id);
             model.addAttribute("board",board);
         }
 
