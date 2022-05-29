@@ -29,7 +29,7 @@
             <tr th:each="board : ${boards}">
                 <td th:text="${board.id}"></td>
                 <td th:text="${board.username}"></td>
-                <td th:text="${board.title}"></td>
+                <td><a th:text="${board.title}" th:href="@{/board/write(id=${board.id})}">Title</a></td>
                 <td th:text="${board.content}"></td>
                 <td th:text="${board.regTime}"></td>
                 <td th:text="${board.hit}"></td>

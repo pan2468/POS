@@ -1,14 +1,13 @@
 package com.cafe.pos.service;
 
 import com.cafe.pos.entity.Board;
-import com.cafe.pos.entity.Member;
 import com.cafe.pos.repository.BoardRepository;
-import com.cafe.pos.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
