@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -30,16 +31,15 @@ class BoardServiceTest {
     BoardRepository boardRepository;
 
 //    @Test
-//    @DisplayName("등록 테스트")
-//     public Board save() throws Exception{
-//        Board board = new Board();
+//    @DisplayName("삭제 테스트")
+//     public Board delete() throws Exception{
 //
-//        board.setUsername("이름");
-//        board.setTitle("제목");
-//        board.setContent("내용");
-//        board.setRegTime(LocalDateTime.now());
+////        Board board = new Board();
+////        board.setId(board.getId());
+////        Long id = board;
 //
-//        return boardRepository.save(board);
+//
+//        return boardRepository.deleteById();
 //    }
 
 

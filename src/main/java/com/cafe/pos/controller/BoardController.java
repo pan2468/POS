@@ -6,11 +6,9 @@ import com.cafe.pos.service.BoardService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
@@ -65,6 +63,18 @@ public class BoardController {
         board.setRegTime(LocalDate.now());
 
         boardService.save(board);
+
+        return "redirect:/board/list";
+    }
+
+
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam(required = false) Long id){
+
+        log.info("번호:",id);
+
+        boardService.remove(id);
 
         return "redirect:/board/list";
     }
