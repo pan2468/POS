@@ -1,6 +1,5 @@
 package com.cafe.pos.controller;
 
-import com.cafe.pos.dto.BoardFormDto;
 import com.cafe.pos.entity.Board;
 import com.cafe.pos.repository.BoardRepository;
 import com.cafe.pos.service.BoardService;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Log4j2
@@ -41,17 +39,22 @@ public class BoardController {
         return "board/list";
     }
 
-    @GetMapping("/write")
-    public String write(Model model, @RequestParam(required = false)  Long id){
+    @GetMapping("/detail")
+    public String detail(Model model, @RequestParam(required = false) Long id){
 
-        if(id == null){
-            model.addAttribute("board",new Board());
-        }else if(id != null){
-            log.info(id);
-            Board board = boardRepository.findById(id).orElse(null);
-            boardService.updateView(id);
-            model.addAttribute("board",board);
-        }
+        log.info(id);
+        Board board = boardRepository.findById(id).orElse(null);
+        boardService.updateView(id);
+        model.addAttribute("board",board);
+
+        return "board/detail";
+    }
+
+
+    @GetMapping("/write")
+    public String write(Model model){
+
+        model.addAttribute("board",new Board());
 
         return "board/write";
     }
