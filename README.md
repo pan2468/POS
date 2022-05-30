@@ -3,7 +3,7 @@
 + 공지사항, 로그인, 회원가입, 회원관리, 관리자 페이지
 
 # BackEnd 
-+ Java 11
++ Java 1.8
 + SpringBoot 
 + JPA
 
