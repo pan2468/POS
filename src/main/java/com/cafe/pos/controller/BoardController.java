@@ -79,4 +79,14 @@ public class BoardController {
         return "redirect:/board/list";
     }
 
+    @PostMapping("/update")
+    public String modify(@Valid Board board){
+
+        board.setRegTime(LocalDate.now());
+
+        boardService.save(board);
+
+        return "redirect:/board/list";
+    }
+
 }
