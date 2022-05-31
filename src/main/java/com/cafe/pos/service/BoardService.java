@@ -3,6 +3,8 @@ package com.cafe.pos.service;
 import com.cafe.pos.entity.Board;
 import com.cafe.pos.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,9 +18,9 @@ public class BoardService {
 
     private final BoardRepository boardRepository;
 
-    public List<Board> boardList(){
+    public Page<Board> boardList(Pageable pageable){
 
-        return boardRepository.findAll();
+        return boardRepository.findAll(pageable);
     }
 
     public Board save(Board board){

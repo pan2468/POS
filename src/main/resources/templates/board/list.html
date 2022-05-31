@@ -38,27 +38,47 @@
       </table> 
       <form class="d-flex" role="search">
           <select class="form-select">
-              <option>Mustard</option>
-              <option>Ketchup</option>
-              <option>Relish</option>
+              <option value="">제목</option>
+              <option value="">내용</option>
           </select>
           <input class="form-control" type="search" placeholder="검색어를 입력하세요." aria-label="Search" style="width: 300px;" >
           <button class="btn btn-outline-success" type="submit" style="margin-left: 5px;">검색</button>
       </form>
     </br>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-                <a class="page-link">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li>
-        </ul>
-    </nav>
+<!--    <nav aria-label="Page navigation example">-->
+<!--        <ul class="pagination justify-content-center">-->
+<!--            <li class="page-item disabled">-->
+<!--                <a class="page-link">Previous</a>-->
+<!--            </li>-->
+<!--            <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+<!--            <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--            <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--            <li class="page-item">-->
+<!--                <a class="page-link" href="#">Next</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+
+
+      <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+              <li class="page-item" th:classappend="${1 == boards.pageable.pageNumber + 1} ? 'disabled'">
+                  <a class="page-link" href="#" th:href="@{/board/list(page=${boards.pageable.pageNumber - 1})}"
+                     tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+              <li class="page-item" th:classappend="${i == boards.pageable.pageNumber + 1} ? 'disabled'"
+                  th:each="i : ${#numbers.sequence(startPage, endPage)}">
+                  <a class="page-link" href="#" th:if="${endPage == i} ? 'hidden': endPage "  th:href="@{/board/list(page=${i - 1})}" >[[${i}]]</a>
+              </li>
+              <li class="page-item"
+                  th:classappend="${boards.totalPages == boards.pageable.pageNumber + 1} ? 'disabled'">
+                  <a class="page-link" href="#"
+                     th:href="@{/board/list(page=${boards.pageable.pageNumber + 1})}">Next</a>
+              </li>
+          </ul>
+      </nav>
+
+
   </div>
 </body>
 </html>
