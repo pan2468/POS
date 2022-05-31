@@ -8,15 +8,19 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
-
 @Service
 @Transactional
 @RequiredArgsConstructor
 public class BoardService {
 
     private final BoardRepository boardRepository;
+
+
+//    @Transactional(readOnly = true)
+//    public Page<Board> boardSearchList(Pageable pageable,BoardSearchDto boardSearchDto){
+//
+//        return searchRepository.getSearchList(pageable,boardSearchDto);
+//    }
 
     public Page<Board> boardList(Pageable pageable){
 
@@ -27,6 +31,7 @@ public class BoardService {
 
         return boardRepository.save(board);
     }
+
 
     /* 조회수 증가 */
     @Transactional
@@ -40,4 +45,6 @@ public class BoardService {
 
         boardRepository.deleteById(id);
     }
+
+
 }

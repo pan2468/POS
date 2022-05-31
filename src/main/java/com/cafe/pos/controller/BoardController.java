@@ -1,5 +1,6 @@
 package com.cafe.pos.controller;
 
+import com.cafe.pos.dto.BoardSearchDto;
 import com.cafe.pos.entity.Board;
 import com.cafe.pos.repository.BoardRepository;
 import com.cafe.pos.service.BoardService;
@@ -9,31 +10,27 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
-import java.util.List;
 
 @Log4j2
 @Controller
 @RequestMapping("/board")
 public class BoardController {
 
-    @Autowired
-    private BoardRepository boardRepository;
-
-    @Autowired
-    private BoardService boardService;
-
+    @Autowired private BoardRepository boardRepository;
+    @Autowired private BoardService boardService;
 
 
     @GetMapping("/list")
-    public String list(Model model,@PageableDefault(size = 4) Pageable pageable){
+    public String list(Model model, @PageableDefault(size = 4) Pageable pageable,
+                       BoardSearchDto boardSearchDto){
 
         Page<Board> boards = boardService.boardList(pageable);
+        //Page<Board> boards = searchRepository.getSearchList(pageable,boardSearchDto);
         int startPage = Math.max(1,boards.getPageable().getPageNumber() - 4);
         int endPage = Math.min(boards.getTotalPages(),boards.getPageable().getPageNumber() + 4);
 
@@ -45,7 +42,7 @@ public class BoardController {
     }
 
     @GetMapping("/detail")
-    public String detail(Model model, @RequestParam(required = false) Long id){
+    public String detail(Model model, @RequestParam Long id){
 
         log.info(id);
         Board board = boardRepository.findById(id).orElse(null);
@@ -69,7 +66,9 @@ public class BoardController {
 
         board.setRegTime(LocalDate.now());
 
+        log.info("------등록전-------");
         boardService.save(board);
+        log.info("------등록 완료-------");
 
         return "redirect:/board/list";
     }

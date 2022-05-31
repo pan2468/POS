@@ -38,14 +38,8 @@ public class Board {
 
     private int hit;
 
+    private String searchBy;    //검색조건
 
-//    public void updateItem(BoardFormDto boardFormDto){
-//        this.id = boardFormDto.getId();
-//        this.username = boardFormDto.getUsername();
-//        this.title = boardFormDto.getTitle();
-//        this.content = boardFormDto.getContent();
-//        this.regTime = boardFormDto.getRegTime();
-//        this.hit = boardFormDto.getHit();
-//    }
+    private String searchQuery = "";  //검색어 입력
 
 }
