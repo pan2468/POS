@@ -28,8 +28,10 @@ public class BoardController {
     @GetMapping("/list")
     public String list(Model model, @PageableDefault(size = 4) Pageable pageable,
                        BoardSearchDto boardSearchDto){
-
+        /* 게시판 페이징 */
         //Page<Board> boards = boardService.boardList(pageable);
+
+        /* 게시판 검색 페이징 */
         Page<Board> boards = boardService.getSearchList(pageable,boardSearchDto);
         int startPage = Math.max(1,boards.getPageable().getPageNumber() - 4);
         int endPage = Math.min(boards.getTotalPages(),boards.getPageable().getPageNumber() + 4);
