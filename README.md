@@ -8,6 +8,8 @@
 
 # SpringSecurity
 + SpringSecurity5 
++ 인증(Authorizatoin)
++ 인가(Authorization)
 
 # Database 
 + RDBMS: mysql
