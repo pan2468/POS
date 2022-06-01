@@ -72,16 +72,10 @@ h5{
     margin-left: 473px;
     width: 350px;
 }
-#userid, #email, #name, #phone, #address{
+#userid, #email, #name, #phone, #address,#role{
     margin-left: 473px;
     width: 350px;
 }
 #search{
     padding-bottom: 15px;
-}
-#user{
-    margin-left: 510px;
-}
-#admin{
-    margin-left: 50px;
 }

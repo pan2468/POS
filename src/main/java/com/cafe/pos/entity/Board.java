@@ -1,17 +1,15 @@
 package com.cafe.pos.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.cafe.pos.constant.Role;
 import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 
 @Entity
@@ -32,8 +30,6 @@ public class Board {
     @Size(min=2,max = 30, message = "제목은 2자이상 30자 이하입니다.")
     private String title;
     private String content;
-    //private String TitleOrContent;
-
 
     private LocalDate regTime;
 
@@ -42,5 +38,9 @@ public class Board {
     private String searchBy;    //검색조건
 
     private String searchQuery = "";  //검색어 입력
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
 
 }
