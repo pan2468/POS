@@ -1,5 +1,6 @@
 package com.cafe.pos.service;
 
+import com.cafe.pos.dto.BoardSearchDto;
 import com.cafe.pos.entity.Board;
 import com.cafe.pos.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,13 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class BoardService {
 
     private final BoardRepository boardRepository;
-
-
-//    @Transactional(readOnly = true)
-//    public Page<Board> boardSearchList(Pageable pageable,BoardSearchDto boardSearchDto){
-//
-//        return searchRepository.getSearchList(pageable,boardSearchDto);
-//    }
 
     public Page<Board> boardList(Pageable pageable){
 
@@ -46,5 +40,8 @@ public class BoardService {
         boardRepository.deleteById(id);
     }
 
-
+    @Transactional(readOnly = true)
+    public Page<Board> getSearchList(Pageable pageable, BoardSearchDto boardSearchDto) {
+        return boardRepository.getBoardPage(pageable,boardSearchDto);
+    }
 }

@@ -29,8 +29,8 @@ public class BoardController {
     public String list(Model model, @PageableDefault(size = 4) Pageable pageable,
                        BoardSearchDto boardSearchDto){
 
-        Page<Board> boards = boardService.boardList(pageable);
-        //Page<Board> boards = searchRepository.getSearchList(pageable,boardSearchDto);
+        //Page<Board> boards = boardService.boardList(pageable);
+        Page<Board> boards = boardService.getSearchList(pageable,boardSearchDto);
         int startPage = Math.max(1,boards.getPageable().getPageNumber() - 4);
         int endPage = Math.min(boards.getTotalPages(),boards.getPageable().getPageNumber() + 4);
 
