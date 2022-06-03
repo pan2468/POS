@@ -1,7 +1,9 @@
 package com.cafe.pos.controller;
 
 import com.cafe.pos.entity.Member;
+import com.cafe.pos.repository.MemberRepository;
 import com.cafe.pos.service.MemberService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,15 +12,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
+@Log4j2
 @Controller
 @RequestMapping("/member")
 public class MemberController {
 
-    @Autowired
-    private MemberService memberService;
+    @Autowired private MemberService memberService;
+    @Autowired private MemberRepository memberRepository;
 
     @GetMapping("/login")
     public String login(){ // 로그인 페이지
@@ -48,6 +50,12 @@ public class MemberController {
         model.addAttribute("members",members);
 
         return "member/admin";
+    }
+
+    @GetMapping(value = "/login/error")
+    public String loginError(Model model){
+        model.addAttribute("loginErrorMsg","아이디 또는 비밀번호를 확인해주세요.");
+        return "member/memberLoginForm";
     }
 
 
