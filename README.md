@@ -1,11 +1,15 @@
-# CafePOS
-+ 카페 POS 주문, 주문등록,음식,가격
+# Notice
 + 공지사항, 로그인, 회원가입, 회원관리, 관리자 페이지
 
 # BackEnd 
 + Java 11
 + SpringBoot 
 + JPA
+
+# SpringSecurity
++ SpringSecurity5 
++ 인증(Authorizatoin)
++ 인가(Authorization)
 
 # Database 
 + RDBMS: mysql
