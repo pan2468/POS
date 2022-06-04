@@ -1,8 +1,10 @@
 package com.cafe.pos.controller;
 
+import com.cafe.pos.entity.Board;
 import com.cafe.pos.entity.Member;
 import com.cafe.pos.repository.MemberRepository;
 import com.cafe.pos.service.MemberService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,16 +19,22 @@ import java.util.List;
 @Log4j2
 @Controller
 @RequestMapping("/member")
+@RequiredArgsConstructor
 public class MemberController {
 
-    @Autowired private MemberService memberService;
-    @Autowired private MemberRepository memberRepository;
+     private final MemberService memberService;
+     private final MemberRepository memberRepository;
 
     @GetMapping("/login")
     public String login(){ // 로그인 페이지
 
         return "member/memberLoginForm";
     }
+
+//    @PostMapping("/login")
+//    public String loginProcess(){
+//        return "board/list";
+//    }
 
     @GetMapping("/sign")
     public String sign(Member member){ // 회원 가입 페이지

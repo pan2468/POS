@@ -36,11 +36,6 @@ public class MemberService implements UserDetailsService {
         }
     }
 
-//    public Member findByUserId(String userid, String password) {
-//        Member member = memberRepository.findByUseridOrPassword(userid,password);
-//        return member;
-//    }
-
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         //Member member = memberRepository.findByUserid(userid);
@@ -49,12 +44,13 @@ public class MemberService implements UserDetailsService {
         if(member == null){
             throw new UsernameNotFoundException(email);
         }
-
+        System.out.println("************* 조회성공 *******************");
         return User.builder()
-                .username(member.getUserid())
+                .username(member.getEmail())
                 .password(member.getPassword())
                 .roles(member.getRole().toString())
                 .build();
     }
+
 
 }

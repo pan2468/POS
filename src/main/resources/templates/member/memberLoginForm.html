@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
->
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 	<meta charset="UTF-8">
 	<title>Title</title>
@@ -13,9 +11,9 @@
 <body>
 	<div class="container">
 		<h5>오신것을 환영합니다.</h5>
-		<form role="form" method="post" th:action="@{/member/logins}">
+		<form role="form" method="post" th:action="@{/member/login}">
 			<div class="mb-3">
-		  		<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="아이디">
+		  		<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="이메일">
 			</div>
 			<div class="mb-3">
 		  		<input type="password" class="form-control" id="password" name="password" placeholder="비밀번호">
