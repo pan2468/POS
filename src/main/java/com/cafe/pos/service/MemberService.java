@@ -3,6 +3,7 @@ package com.cafe.pos.service;
 import com.cafe.pos.entity.Member;
 import com.cafe.pos.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Log4j2
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -38,7 +40,6 @@ public class MemberService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        //Member member = memberRepository.findByUserid(userid);
         Member member = memberRepository.findByEmail(email);
 
         if(member == null){
