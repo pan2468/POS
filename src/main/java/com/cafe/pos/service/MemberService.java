@@ -1,5 +1,6 @@
 package com.cafe.pos.service;
 
+import com.cafe.pos.constant.Role;
 import com.cafe.pos.entity.Member;
 import com.cafe.pos.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -45,13 +46,33 @@ public class MemberService implements UserDetailsService {
         if(member == null){
             throw new UsernameNotFoundException(email);
         }
-        System.out.println("************* 조회성공 *******************");
+
+        String pw = member.getPassword();
+        String roles = String.valueOf(member.getRole());
+
+        System.out.println("************ 조회 성공 ***********");
+
         return User.builder()
-                .username(member.getEmail())
-                .password(member.getPassword())
-                .roles(member.getRole().toString())
+                .username(email)
+                .password(pw)
+                .roles(roles)
                 .build();
     }
+
+//    @Override
+//    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+//        Member member = memberRepository.findByEmail(email);
+//
+//        if(member == null){
+//            throw new UsernameNotFoundException(email);
+//        }
+//        System.out.println("************* 조회성공 *******************");
+//        return User.builder()
+//                .username(member.getEmail())
+//                .password(member.getPassword())
+//                .roles(member.getRole().toString())
+//                .build();
+//    }
 
 
 }

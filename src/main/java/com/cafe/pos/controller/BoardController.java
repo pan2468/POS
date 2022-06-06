@@ -40,7 +40,7 @@ public class BoardController {
         model.addAttribute("endPage",endPage);
         model.addAttribute("boards",boards);
 
-        return "board/list";
+        return "/board/list";
     }
 
     @GetMapping("/detail")

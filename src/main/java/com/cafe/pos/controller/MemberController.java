@@ -31,17 +31,11 @@ public class MemberController {
         return "member/memberLoginForm";
     }
 
-//    @PostMapping("/login")
-//    public String loginProcess(){
-//        return "board/list";
-//    }
-
     @GetMapping("/sign")
     public String sign(Member member){ // 회원 가입 페이지
 
         return "member/sign_up";
     }
-
 
     @PostMapping("/admin")
     public String sign_up(Member member){ // 회원 가입 후
