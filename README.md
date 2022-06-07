@@ -7,7 +7,8 @@
 + JPA
 
 # SpringSecurity
-+ SpringSecurity5 
++ SpringSecurity
++ JWT 
 + 인증(Authorizatoin)
 + 인가(Authorization)
 
